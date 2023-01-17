@@ -19,7 +19,6 @@ export default function NftBlog() {
   return (
     <div>
       <Search/>
-      <ArchiveBlog/>
       <div className="blogs-container">
       {
       blogApi.blogs.map((e)=>{

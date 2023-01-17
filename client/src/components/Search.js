@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import blogContext from '../context/blogContext';
@@ -8,7 +8,7 @@ export default function Search() {
   const location = useLocation();
   const blogApi = useContext(blogContext)
 
-  function handleSearch (e){
+  function handleSearch(e) {
     blogApi.setsearchValue(e.target.value)
   }
 
@@ -18,7 +18,8 @@ export default function Search() {
 
       <div className="bg-img">
         <h2>BLOG</h2>
-        <input onChange={handleSearch} value={blogApi.searchValue} type="search" placeholder="Search" />
+        {location.pathname === '/' && <input onChange={handleSearch} value={blogApi.searchValue} type="search" placeholder="Search" />
+        }
         <i className="fa-solid fa-magnifying-glass"></i>
       </div>
       <div className="category">

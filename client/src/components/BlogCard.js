@@ -75,6 +75,14 @@ export default function BlogCard(props) {
         navigate("/singleBlog/"+props.blog._id)
     }
 
+    function convertDate(date) {
+        return new Date(date).toLocaleDateString('en-us', {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        })
+    }
+
     return (
         
         <>
@@ -145,7 +153,7 @@ export default function BlogCard(props) {
                     <img src={profilieImage} alt="" />
                     <div className="user-details">
                         {/* <div className="name">{props.user}</div> */}
-                        <div className="time">jun 21, 2022</div>
+                        <div className="time">{convertDate(props.blog.date)}</div>
                     </div>
                 </div>
                 </div>
